@@ -18,10 +18,12 @@ from django.urls import path
 from .views import (
     login_view,
     index_view,
+    register_view,
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_view, name="home"),
     path('login/', login_view, name='login'),
+    path('register/', register_view),
 ]

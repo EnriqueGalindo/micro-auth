@@ -8,12 +8,6 @@
 </head>
 <body>
     
-    <h1></h1>
-    {% for user in MyCustomUser %}
-    <ul>
-        <li>
-             {{user.username}}
-        </li>
-    </ul>
-    {% endfor %}
+    <h1>{{request.user.username}}</h1>
+    
 </body>

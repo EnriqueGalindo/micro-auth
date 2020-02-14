@@ -26,7 +26,7 @@ SECRET_KEY = 'zh)vza15w39guh$hg+=z@li%soq(859c63975y)+^h0&9!ekk3'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+LOGIN_URL = '/login/'
 
 # Application definition
 
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "custom_user.apps.CustomUserConfig"
+    "custom_user.apps.CustomUserConfig",
+    'authapp'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'authapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'authapp', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
